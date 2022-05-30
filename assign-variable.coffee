@@ -35,17 +35,15 @@ message = new MessageEvents 'warn', (id, text...) ->
 	text		: text.join ' '
 
 
-#	value can be of any type
-#	alt can be of any type
-#	id should be of type string, preferable the identifier of the variable being set by this function
+
 assign = ( value, alt, id ) ->
 	if types.notUndefined(alt) and (( types.typeof value ) isnt ( types.typeof alt ))
-		message.warn types.forceString(id), 'type of value is not equal to type of alt, returning alt'
+		message.warn types.forceString(id), 'type mismatch encountered, returning alt:', alt
 		return alt
 	return value
 
 
-assign.onWarning = (handler) -> message.on 'warn', handler
+assign.onWarn = (handler) -> message.on 'warn', handler
 
 
 module.exports = assign
