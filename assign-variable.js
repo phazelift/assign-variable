@@ -23,7 +23,7 @@
   MessageEvents = require('message-events');
   message = new MessageEvents('warn', function (id, ...text) {
     return {
-      sender: 'assign-var',
+      sender: 'assign-variable',
       type: 'warn',
       id: id,
       text: text.join(' ')

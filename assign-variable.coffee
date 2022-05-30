@@ -29,7 +29,7 @@ MessageEvents	= require 'message-events'
 
 
 message = new MessageEvents 'warn', (id, text...) ->
-	sender	: 'assign-var'
+	sender	: 'assign-variable'
 	type		: 'warn'
 	id			: id
 	text		: text.join ' '
