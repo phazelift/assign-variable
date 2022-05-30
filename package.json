@@ -1,0 +1,24 @@
+{
+  "name": "assign-variable",
+  "version": "0.1.0",
+  "description": "assign a dynamically type checked value using an optional alternative value",
+  "main": "assign-variable.min.js",
+  "scripts": {
+    "build": "coffee -c --transpile assign-variable.coffee && npm run uglify",
+    "test": "npm run build && coffee ./test.coffee",
+    "uglify": "terser assign-variable.js -c -m -o assign-variable.min.js"
+  },
+  "keywords": [
+    "assign",
+    "variable",
+    "dynamic",
+    "type",
+    "check"
+  ],
+  "author": "dennis raymondo van der sluis",
+  "license": "MIT",
+  "dependencies": {
+    "message-events": "^0.4.0",
+    "types.js": "^1.9.4"
+  }
+}
