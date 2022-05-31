@@ -63,7 +63,7 @@ myVar = assign('', 0);
 //	  sender: 'assign-variable',
 //	  type: 'warn',
 //	  id: '',
-//	  text: 'type mismatch encountered, returning alt: 0'
+//	  text: 'type mismatch encountered'
 //	}
 
 // you can add an id as a third argument that in case of type mismatch
@@ -76,6 +76,6 @@ myVar = assign('', 0, 'myVar');
 //	  sender: 'assign-variable',
 //	  type: 'warn',
 //	  id: 'myVar',
-//	  text: 'type mismatch encountered, returning alt: 0'
+//	  text: 'type mismatch encountered'
 //	}
 ```

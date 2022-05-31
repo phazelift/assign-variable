@@ -31,8 +31,8 @@
   });
 
   assign = function (value, alt, id) {
-    if (types.notUndefined(alt) && types.typeof(value) !== types.typeof(alt)) {
-      message.warn(types.forceString(id), 'type mismatch encountered, returning alt:', alt);
+    if (types.isDefined(alt) && types.typeof(value) !== types.typeof(alt)) {
+      message.warn(types.forceString(id), 'type mismatch encountered');
       return alt;
     }
 

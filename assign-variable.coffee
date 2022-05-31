@@ -37,8 +37,8 @@ message = new MessageEvents 'warn', (id, text...) ->
 
 
 assign = ( value, alt, id ) ->
-	if types.notUndefined(alt) and (( types.typeof value ) isnt ( types.typeof alt ))
-		message.warn types.forceString(id), 'type mismatch encountered, returning alt:', alt
+	if types.isDefined(alt) and (( types.typeof value ) isnt ( types.typeof alt ))
+		message.warn types.forceString(id), 'type mismatch encountered'
 		return alt
 	return value
 

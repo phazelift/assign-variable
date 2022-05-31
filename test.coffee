@@ -23,7 +23,7 @@ test = ->
 	assign '', 0, 'test'
 	if message.sender isnt 'assign-variable'
 		return "should return the correct message events 'sender'"
-	if message.text isnt 'type mismatch encountered, returning alt: 0'
+	if message.text isnt 'type mismatch encountered'
 		return "should return a correct message events 'text' warning message"
 	if message.id isnt 'test'
 		return "should return the correct message events 'id'"
@@ -32,4 +32,3 @@ test = ->
 
 
 console.log test()
-
