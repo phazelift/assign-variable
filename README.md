@@ -1,13 +1,14 @@
 # assign-variable
-## assign a dynamically type checked value using an optional alternative value
+
+
+### Assign dynamically incoming values at runtime with confidence.
 
 <br/>
 
-Assign dynamically incoming values at runtime with confidence.
 
 Features:
 
-- dynamic type check through alternative value
+- dynamically type checked against alternative values' type
 - return alternative value in case type check fails
 - emits a warning message event when type check fails
 
@@ -42,9 +43,6 @@ console.log(store);
 
 In more detail
 ```typescript
-// allow for warning message events to output to console (this is optional)
-assign.onWarn(console.warn);
-
 myVar = assign('ok', undefined);
 // ok
 
@@ -52,6 +50,11 @@ myVar = assign('ok', undefined);
 // when types match, the first value will be returned
 myVar = assign('!', '?');
 // !
+
+
+// for debugging you can allow for warning message events to
+// output to console (this is optional)
+assign.onWarn(console.warn);
 
 // when the types don't match, the second (alternative) value will be returned
 // in addition a warning message event will be emitted

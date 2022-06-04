@@ -1,5 +1,5 @@
 #
-# assign a dynamically type checked value using an optional alternative value
+# Assign a dynamically type checked value using an optional alternative value
 #
 # MIT License
 #
