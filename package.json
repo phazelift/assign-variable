@@ -1,6 +1,6 @@
 {
   "name": "assign-variable",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "assign a dynamically type checked value using an optional alternative value",
   "main": "assign-variable.min.js",
   "scripts": {
