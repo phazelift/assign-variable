@@ -94,10 +94,4 @@ myVar = assign('?', 0, 'myVar');
 
 ---
 
-## license
-
-## MIT
-
-
-
-
+## license MIT
