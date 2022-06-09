@@ -63,15 +63,16 @@ myVar = assign('', 0);
 
 // the message event emitted:
 //	{
-//	  sender: 'assign-variable',
-//	  type: 'warn',
-//	  id: '',
-//	  text: 'type mismatch encountered'
+//   sender: 'assign-variable',
+//   type: 'warn',
+//   id: '',
+//   text: 'type mismatch encountered'
+//   value: ''
 //	}
 
 // you can add an id as a third argument that in case of type mismatch
 // the message event can show the id if needed for debugging
-myVar = assign('', 0, 'myVar');
+myVar = assign('?', 0, 'myVar');
 // 0
 
 // the message event emitted:
@@ -80,5 +81,23 @@ myVar = assign('', 0, 'myVar');
 //	  type: 'warn',
 //	  id: 'myVar',
 //	  text: 'type mismatch encountered'
+//   value: '?'
 //	}
 ```
+
+# change log
+
+0.3.0
+
+- adds value property to warning messages, now you can for example filter out messages based on value or type of value
+- adds mocha tests
+
+---
+
+## license
+
+## MIT
+
+
+
+

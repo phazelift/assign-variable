@@ -21,25 +21,26 @@
   var MessageEvents, assign, message, types;
   types = require('types.js');
   MessageEvents = require('message-events');
-  message = new MessageEvents('warn', function (id, ...text) {
+  message = new MessageEvents('warn', function (id, text, value) {
     return {
       sender: 'assign-variable',
       type: 'warn',
       id: id,
-      text: text.join(' ')
+      text: text,
+      value: value
     };
   });
 
   assign = function (value, alt, id) {
     if (types.isDefined(alt) && types.typeof(value) !== types.typeof(alt)) {
-      message.warn(types.forceString(id), 'type mismatch encountered');
+      message.warn(types.forceString(id), 'type mismatch', value);
       return alt;
     }
 
     return value;
   };
 
-  assign.onWarn = function (handler) {
+  assign.onWarning = function (handler) {
     return message.on('warn', handler);
   };
 

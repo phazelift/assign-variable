@@ -28,22 +28,23 @@ types				= require 'types.js'
 MessageEvents	= require 'message-events'
 
 
-message = new MessageEvents 'warn', (id, text...) ->
+message = new MessageEvents 'warn', (id, text, value) ->
 	sender	: 'assign-variable'
 	type		: 'warn'
 	id			: id
-	text		: text.join ' '
+	text		: text
+	value		: value
 
 
 
 assign = ( value, alt, id ) ->
-	if types.isDefined(alt) and (( types.typeof value ) isnt ( types.typeof alt ))
-		message.warn types.forceString(id), 'type mismatch encountered'
+	if types.isDefined(alt) and ( types.typeof(value) isnt types.typeof(alt) )
+		message.warn types.forceString(id), 'type mismatch', value
 		return alt
 	return value
 
 
-assign.onWarn = (handler) -> message.on 'warn', handler
+assign.onWarning			= (handler) -> message.on 'warn', handler
 
 
 module.exports = assign
