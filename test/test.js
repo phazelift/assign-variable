@@ -10,7 +10,7 @@
 
   warn = null;
 
-  assign.onWarning(function(msg) {
+  assign.onWarn(function(msg) {
     return warn = msg;
   });
 

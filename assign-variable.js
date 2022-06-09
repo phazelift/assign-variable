@@ -40,7 +40,7 @@
     return value;
   };
 
-  assign.onWarning = function (handler) {
+  assign.onWarn = function (handler) {
     return message.on('warn', handler);
   };
 

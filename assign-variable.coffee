@@ -44,7 +44,7 @@ assign = ( value, alt, id ) ->
 	return value
 
 
-assign.onWarning			= (handler) -> message.on 'warn', handler
+assign.onWarn = (handler) -> message.on 'warn', handler
 
 
 module.exports = assign

@@ -6,7 +6,7 @@ validator	= null
 warn			= null
 
 
-assign.onWarning (msg) -> warn = msg
+assign.onWarn (msg) -> warn = msg
 
 beforeEach ->
 	warn = null
